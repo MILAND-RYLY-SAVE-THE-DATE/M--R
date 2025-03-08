@@ -11,7 +11,7 @@
                 events: {
                     'onReady': function (event) {
                         event.target.playVideo();
-                        event.target.mute(); // Mute to allow autoplay
+                        event.target.setVolume(50); // Adjust volume (0-100)
                     }
                 },
                 playerVars: {
@@ -30,18 +30,9 @@
         }
     </script>
     <script src="https://www.youtube.com/iframe_api"></script>
-    <style>
-        #bgm {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            opacity: 0;
-            pointer-events: none;
-        }
-    </style>
 </head>
 <body>
     <!-- Hidden YouTube Player -->
-    <div id="bgm"></div>
+    <div id="bgm" style="display: none;"></div>
 </body>
 </html>
